@@ -20,7 +20,7 @@ cd ..
 # convert docs to reason
 
 yarn install
-./build.sh
+./build.sh # this will take a minute
 
 # converted html is now in `output/`
 ```
