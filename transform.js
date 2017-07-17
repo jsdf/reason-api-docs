@@ -20,21 +20,6 @@ function convert(input, isInterface) {
   return result.stdout.toString();
 }
 
-function convertInJS(input, isInterface) {
-  const {refmt} = require('./refmt');
-
-  const converted = refmt(
-    input,
-    'ML',
-    isInterface ? 'interface' : 'implementation',
-    'RE'
-  );
-  if (converted[0] !== 'MLtoRE') {
-    return input;
-  }
-  return converted[1];
-}
-
 module.exports = function(fileInfo, api, options) {
   const $ = cheerio.load(fileInfo.source);
   const body = $('body');
